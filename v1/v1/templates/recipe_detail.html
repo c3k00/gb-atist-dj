@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ recipe.title }} - Рецепты{% endblock %}
+
+{% block content %}
+    <article>
+        <h2>{{ recipe.title }}</h2>
+        <p><strong>Автор:</strong> {{ recipe.author.username }}</p>
+        <p><strong>Время приготовления:</strong> {{ recipe.prep_time }} минут</p>
+        {% comment %} <div>
+            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+        </div> {% endcomment %}
+        {% if recipe.image %}
+            <div>
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+            </div>
+        {% endif %}
+        <p><strong>Описание:</strong> {{ recipe.description }}</p>
+        <h3>Шаги приготовления:</h3>
+        <ol>
+            {% for step in recipe.instructions.splitlines %}
+                <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+        <!-- Добавьте вывод других полей рецепта по необходимости -->
+    </article>
+{% endblock %}

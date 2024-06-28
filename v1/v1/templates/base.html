@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Рецепты{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Рецепты</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'add_recipe' %}">Добавить рецепт</a></li>
+                    <li><a href="{% url 'user_recipes' %}">Мои рецепты</a></li>
+                    {% comment %} <li><a href="{% url 'logout' %}">Выход</a></li> {% endcomment %}
+                    <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выход</a></li>
+                    <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                        {% csrf_token %}
+                    </form>
+                        
+                {% else %}
+                    <li><a href="{% url 'login' %}">Вход</a></li>
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Рецепты. Все права защищены.</p>
+    </footer>
+</body>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Редактирование категории{% endblock %}
+
+{% block content %}
+<h2>Редактирование категории "{{ category.name }}"</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}

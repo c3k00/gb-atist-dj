@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Светло-серый фон */
+    color: #333; /* Темный текст */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff; /* Белый фон для заголовка */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #fff; /* Белый фон для подвала */
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-align: center;
+    clear: both;
+}
+
+article {
+    background-color: #fff; /* Белый фон для контента */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для блока с контентом */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    color: #333; /* Темный цвет заголовков */
+}
+
+a {
+    color: #66676a; /* Основной цвет ссылки */
+    text-decoration: none; /* Убирает подчеркивание */
+}
+
+a:visited {
+    color: #66676a; /* Цвет для посещенной ссылки */
+}
+
+a:hover {
+    color: #000000; /* Цвет при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении (опционально) */
+}
+
+a:active {
+    color: #0066cc; /* Цвет при нажатии */
+}

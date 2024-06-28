@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Профиль пользователя - Рецепты{% endblock %}
+
+{% block content %}
+    <h2>Профиль пользователя: {{ user.username }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <!-- Добавьте другие данные профиля пользователя по необходимости -->
+{% endblock %}
